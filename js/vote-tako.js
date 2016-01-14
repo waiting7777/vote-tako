@@ -38,7 +38,7 @@ $(document).ready(function(){
 					if(dist == data_dist[i]['town']){
 						
 						if(count == 0){
-							$('#btn-dist').html(data_dist[i]['dist'] + '<img src="image/point.png">');
+							$('#btn-dist').html('行政區' + '<img src="image/point.png">');
 							count += 1;
 						}
 
