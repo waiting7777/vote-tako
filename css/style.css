@@ -6,8 +6,39 @@ body{
 	color: #1A1A1A;
 }
 
+h1{
+	font-weight: bold;
+	font-size: 85px;
+	line-height: 85px;
+}
+
+h2{
+	font-weight: bold;
+	font-size: 30pt
+	color: #000000;
+	margin: 40px 0 40px 0;
+}
+
+#pre_text{
+	border-left-style: solid;
+	border-left-color: #9fa0a0;
+	margin-top: 40px;
+}
+
+#pre_text p{
+	margin-left: 40px;
+	font-size: 21pt;
+	line-height: 32px;
+	color: #9fa0a0;
+}
+
 #main{
 	margin-top: 40px;
+}
+
+#main p{
+	font-size: 24px;
+
 }
 
 #tako{
@@ -15,6 +46,8 @@ body{
 	height: 432px;
 	position: absolute;
 	top: 0px;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
 }
 
 #predict-test{
@@ -22,7 +55,7 @@ body{
 }
 
 #predict-test-content{
-	margin-top: 322px;
+	margin-top: 333px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #9fa0a0;
@@ -145,23 +178,29 @@ body{
 
 }
 
-.result-title{
+#main p.result-title{
 	margin-top: 40px;
 	font-size: 36px;
 	color: #ffffff;
 	text-align: center;
 }
 
-.result-rank{
+#main p.result-rank{
 	margin-top: 40px;
 	font-size: 80px;
 	color: #ffffff;
 	text-align: center;
 }
 
-.result-mark{
+#main p.result-mark{
 	margin-top: 40px;
 	font-size: 25px;
 	color: #ffffff;
 	text-align: center;
+}
+
+.comment{
+	clear: both;
+	font-size: 21px;
+	margin-top: 350px;
 }

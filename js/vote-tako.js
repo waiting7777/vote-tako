@@ -11,7 +11,7 @@ $(document).ready(function(){
 			
 			if(mark != data_dist[i]['town']){
 
-				temp = '<li><a href="#">';
+				temp = '<li><a href="#tako">';
 				temp += data_dist[i]['town'];
 				temp += '</a></li>';
 				mark = data_dist[i]['town'];
@@ -41,7 +41,7 @@ $(document).ready(function(){
 							count += 1;
 						}
 
-						temp = '<li><a href="#">';
+						temp = '<li><a href="#tako">';
 						temp += data_dist[i]['dist'];
 						temp += '</a></li>';
 						$('#list-dist').append(temp);
@@ -61,9 +61,6 @@ $(document).ready(function(){
 
 	$('#btn-result').click(function(){
 
-		console.log($('#btn-town').text());
-		console.log($('#btn-dist').text());
-
 		temp = $('#btn-town').text() + $('#btn-dist').text();
 
 		d3.csv('data/dist_rank_2012.txt', function(rank_list){
@@ -71,6 +68,19 @@ $(document).ready(function(){
 			for(i in rank_list){
 				if(rank_list[i]['town'] == temp){
 					$('#result-2012 .result-rank').text(rank_list[i]['rank']);
+					console.log(rank_list[i]['ticket_1']);
+					console.log(rank_list[i]['ticket_2']);
+
+					if(parseInt(rank_list[i]['ticket_1']) > parseInt(rank_list[i]['ticket_2'])){
+						$('#tako').css('filter', 'grayscale(0%)');
+						$('#tako').css('-webkit-filter', 'grayscale(0%)');
+						$('#tako').attr('src', 'image/greenoctopus.png');
+					}
+					else{
+						$('#tako').css('filter', 'grayscale(0%)');
+						$('#tako').css('-webkit-filter', 'grayscale(0%)');
+						$('#tako').attr('src', 'image/blueoctopus.png');
+					}
 				}
 			}
 
