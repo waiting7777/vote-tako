@@ -1,6 +1,6 @@
 body{ 
-	margin:0; 
-	padding:0; 
+	margin: 0; 
+	padding:0 12% 0 12%; 
 	font-family:微軟正黑體,Arial, Helvetica ;
 	line-height:32px;
 	color: #1A1A1A;
@@ -8,13 +8,14 @@ body{
 
 h1{
 	font-weight: bold;
-	font-size: 85px;
-	line-height: 85px;
+	font-size: 50px;
+	line-height: 75px;
 }
 
 h2{
 	font-weight: bold;
-	font-size: 30pt
+	font-size: 24px;
+	line-height: 36px
 	color: #000000;
 	margin: 40px 0 40px 0;
 }
@@ -27,17 +28,17 @@ h2{
 
 #pre_text p{
 	margin-left: 40px;
-	font-size: 21pt;
-	line-height: 32px;
+	font-size: 17px;
+	line-height: 26px;
 	color: #9fa0a0;
 }
 
 #main{
-	margin-top: 40px;
+	margin: 40px 0 40px 0;
 }
 
 #main p{
-	font-size: 24px;
+	font-size: 21px;
 
 }
 
@@ -64,7 +65,7 @@ h2{
 }
 
 #logo-web{
-	margin-top:40px;
+	margin-top: 40px;
 	margin-left: 80px;
 }
 
@@ -79,7 +80,6 @@ h2{
 	height: 60px;
 	font-size: 36px;
 	line-height: 36px;
-	color: #9fa0a0;
 	font-weight: lighter;
 }
 
@@ -90,7 +90,6 @@ h2{
 	height: 60px;
 	font-size: 36px;
 	line-height: 36px;
-	color: #9fa0a0;
 	font-weight: lighter;
 }
 
@@ -101,11 +100,10 @@ h2{
 	height: 60px;
 	font-size: 40px;
 	line-height: 40px;
-	color: #000000;
 }
 
 #list-town{
-	margin-left: 70px;
+	margin-left: 60px;
 	font-size: 18px;
 	line-height: 18px;
 	width: 250px;
@@ -126,6 +124,31 @@ h2{
 
 	#result-2008{
 		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2012{
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2016{
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px){
+
+	#result-2008{
+		float: left;
 		margin-left: 70px;
 		background-image: url("../image/circle.png");
 		width: 260px;
@@ -150,7 +173,7 @@ h2{
 
 }
 
-@media screen and (min-width: 1201px){
+@media screen and (min-width: 1401px) and (max-width: 1600px){
 
 	#result-2008{
 		float: left;
@@ -170,6 +193,62 @@ h2{
 
 	#result-2016{
 		margin-left: 90px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1800px){
+
+	#result-2008{
+		float: left;
+		margin-left: 70px;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2012{
+		margin-left: 110px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2016{
+		margin-left: 110px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+}
+
+@media screen and (min-width: 1801px){
+
+	#result-2008{
+		float: left;
+		margin-left: 70px;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2012{
+		margin-left: 180px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2016{
+		margin-left: 180px;
 		float: left;
 		background-image: url("../image/circle.png");
 		width: 260px;
@@ -200,7 +279,9 @@ h2{
 }
 
 .comment{
-	clear: both;
 	font-size: 21px;
-	margin-top: 350px;
+}
+
+#result-img{
+	margin-top: 40px;
 }

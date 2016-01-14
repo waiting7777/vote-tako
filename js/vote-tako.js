@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	$('#btn-dist').attr('disabled', true);
+	$('#btn-result').attr('disabled', true);
 
 	d3.csv('data/dist_list.txt', function(data_dist){
 		
@@ -23,7 +24,7 @@ $(document).ready(function(){
 
 		$('#list-town li').click(function(){
 
-			$('#btn-town').text($(this).text());
+			$('#btn-town').html($(this).text() + '<img src="image/point.png">');
 			$('#btn-dist').attr('disabled', false);
 
 			dist = $(this).text();
@@ -37,7 +38,7 @@ $(document).ready(function(){
 					if(dist == data_dist[i]['town']){
 						
 						if(count == 0){
-							$('#btn-dist').text(data_dist[i]['dist']);
+							$('#btn-dist').html(data_dist[i]['dist'] + '<img src="image/point.png">');
 							count += 1;
 						}
 
@@ -56,7 +57,8 @@ $(document).ready(function(){
 	});
 
 	$('#list-dist').delegate('li', 'click', function(){
-		$('#btn-dist').text($(this).text());
+		$('#btn-dist').html($(this).text() + '<img src="image/point.png">');
+		$('#btn-result').attr('disabled', false);
 	});
 
 	$('#btn-result').click(function(){
@@ -81,6 +83,17 @@ $(document).ready(function(){
 						$('#tako').css('-webkit-filter', 'grayscale(0%)');
 						$('#tako').attr('src', 'image/blueoctopus.png');
 					}
+					$('#result-end').css('margin-top', '40px');
+					if(parseInt(rank_list[i]['rank']) <= 36){
+						$('#result-img').attr('src','image/fb01.jpg');
+					}
+					else if(parseInt(rank_list[i]['rank']) >= 350){
+						$('#result-img').attr('src','image/fb02.jpg');
+					}
+					else{
+						$('#result-img').attr('src','image/fb03.jpg');
+					}
+
 				}
 			}
 
