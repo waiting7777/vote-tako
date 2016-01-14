@@ -1,5 +1,9 @@
-#header{
-	
+body{ 
+	margin:0; 
+	padding:0; 
+	font-family:微軟正黑體,Arial, Helvetica ;
+	line-height:32px;
+	color: #1A1A1A;
 }
 
 #main{
@@ -23,9 +27,141 @@
 	border-width: 1px;
 	border-color: #9fa0a0;
 	border-radius: 10px;
-	height: 300px;
+	height: 250px;
+}
+
+#logo-web{
+	margin-top:40px;
+	margin-left: 80px;
 }
 
 #predict-test-form{
-	margin-top: 200px;
+	margin-top: 60px;
+}
+
+#btn-town{
+	border-color: #000000;
+	margin-left: 70px;
+	width: 250px;
+	height: 60px;
+	font-size: 36px;
+	line-height: 36px;
+	color: #9fa0a0;
+	font-weight: lighter;
+}
+
+#btn-dist{
+	border-color: #000000;
+	margin-left: 40px;
+	width: 250px;
+	height: 60px;
+	font-size: 36px;
+	line-height: 36px;
+	color: #9fa0a0;
+	font-weight: lighter;
+}
+
+#btn-result{
+	border-color: #000000;
+	margin-right: 70px;
+	width: 250px;
+	height: 60px;
+	font-size: 40px;
+	line-height: 40px;
+	color: #000000;
+}
+
+#list-town{
+	margin-left: 70px;
+	font-size: 18px;
+	line-height: 18px;
+	width: 250px;
+}
+
+#test-result{
+	margin-top: 40px;
+}
+
+#list-dist{
+	margin-left: 40px;
+	font-size: 18px;
+	line-height: 18px;
+	width: 250px;
+}
+
+@media screen and (max-width: 1200px){
+
+	#result-2008{
+		float: left;
+		margin-left: 70px;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2012{
+		margin-left: 20px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2016{
+		margin-left: 20px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+}
+
+@media screen and (min-width: 1201px){
+
+	#result-2008{
+		float: left;
+		margin-left: 70px;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2012{
+		margin-left: 90px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+	#result-2016{
+		margin-left: 90px;
+		float: left;
+		background-image: url("../image/circle.png");
+		width: 260px;
+		height: 260px;
+	}
+
+}
+
+.result-title{
+	margin-top: 40px;
+	font-size: 36px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.result-rank{
+	margin-top: 40px;
+	font-size: 80px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.result-mark{
+	margin-top: 40px;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
 }
