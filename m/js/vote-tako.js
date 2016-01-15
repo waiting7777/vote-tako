@@ -10,11 +10,6 @@ var rank_2012 = 0;
 
 fb_share = ['image/fb01.jpg', 'image/fb02.jpg', 'image/fb03.jpg'];
 
-if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- // some code..
- 	window.location.href = "http://p.udn.com.tw/upf/newmedia/2016_data/20160115_vote_tako/m/index.html";
-
-}
 
 $(document).ready(function(){
 
@@ -26,10 +21,10 @@ $(document).ready(function(){
 	});
 
 	$('#share').click(function(){
-		
+
 		FB.ui({
 		    method: 'feed',
-	    	name: '誰是2016總統大選 神準章魚哥？',
+	    	name: '誰是2016總統大選 「神準預測章魚哥」',
 		    caption: '聯合報系新媒體中心製作',
 		    description: '我家住在' + dist_temp + '，2008年準度排名第' + rank_2008 + '、2012年準度排名第' + rank_2012 + '!你呢?快來測測你家是不是章魚哥?',
 		    link: 'http://p.udn.com.tw/upf/newmedia/2016_data/20160115_vote_tako/index.html',
@@ -340,6 +335,7 @@ $(document).ready(function(){
 				if(rank_list[i]['town'] == temp){
 					$('#result-2012 .result-rank').text(rank_list[i]['rank']);
 					rank_2012 = rank_list[i]['rank'];
+					
 
 					if(parseInt(rank_list[i]['ticket_1']) > parseInt(rank_list[i]['ticket_2'])){
 						$('#tako').css('filter', 'grayscale(0%)');
@@ -352,15 +348,15 @@ $(document).ready(function(){
 						$('#tako').attr('src', 'image/blueoctopus.png');
 					}
 					if(parseInt(rank_list[i]['rank']) <= 36){
-						$('#result-img').attr('src','image/fb01.jpg');
+						$('#result-img').attr('src','image/111.jpg');
 						rank_temp = 0;
 					}
 					else if(parseInt(rank_list[i]['rank']) >= 224){
-						$('#result-img').attr('src','image/fb02.jpg');
+						$('#result-img').attr('src','image/222.jpg');
 						rank_temp = 1;
 					}
 					else{
-						$('#result-img').attr('src','image/fb03.jpg');
+						$('#result-img').attr('src','image/333.jpg');
 						rank_temp = 2;
 					}
 
@@ -494,7 +490,6 @@ $(document).ready(function(){
 					$('#result-2008 .result-rank').text(rank_list[i]['rank']);
 					
 					rank_2008 = rank_list[i]['rank'];
-
 					vote_4 = parseFloat(rank_list[i]['vote_1'].slice(0,-2));
 					vote_5 = parseFloat(rank_list[i]['vote_2'].slice(0,-2));
 
