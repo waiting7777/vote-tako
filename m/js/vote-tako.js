@@ -340,12 +340,12 @@ $(document).ready(function(){
 					if(parseInt(rank_list[i]['ticket_1']) > parseInt(rank_list[i]['ticket_2'])){
 						$('#tako').css('filter', 'grayscale(0%)');
 						$('#tako').css('-webkit-filter', 'grayscale(0%)');
-						$('#tako').attr('src', 'image/greenoctopus.png');
+						$('#tako').attr('src', 'image/green_mobile.png');
 					}
 					else{
 						$('#tako').css('filter', 'grayscale(0%)');
 						$('#tako').css('-webkit-filter', 'grayscale(0%)');
-						$('#tako').attr('src', 'image/blueoctopus.png');
+						$('#tako').attr('src', 'image/blue_mobile.png');
 					}
 					if(parseInt(rank_list[i]['rank']) <= 36){
 						$('#result-img').attr('src','image/111.jpg');
