@@ -3,6 +3,9 @@ var vote_2 = 0;
 var vote_3 = 0;
 var vote_4 = 0;
 var vote_5 = 0;
+var vote_6 = 0;
+var vote_7 = 0;
+var vote_8 = 0;
 var rank_temp = 0;
 var dist_temp = '';
 var rank_2008 = 0;
@@ -74,10 +77,13 @@ $(document).ready(function(){
 	$('#y-2008').click(function(){
 		$('#r-2008').removeClass('hidden');
 		$('#r-2012').addClass('hidden');
+		$('#r-2016').addClass('hidden');
 		$('#y-2008').css('text-decoration', 'underline');
 		$('#y-2008').css('color', 'black');
 		$('#y-2012').css('text-decoration', 'none');
 		$('#y-2012').css('color', '#9fa0a0');
+		$('#y-2016').css('text-decoration', 'none');
+		$('#y-2016').css('color', '#9fa0a0');
 
 		$('#pie-dist-2008').highcharts({
 			chart: {
@@ -181,11 +187,14 @@ $(document).ready(function(){
 
 	$('#y-2012').click(function(){
 		$('#r-2008').addClass('hidden');
+		$('#r-2016').addClass('hidden');
 		$('#r-2012').removeClass('hidden');
 		$('#y-2012').css('text-decoration', 'underline');
 		$('#y-2012').css('color', 'black');
 		$('#y-2008').css('text-decoration', 'none');
 		$('#y-2008').css('color', '#9fa0a0');
+		$('#y-2016').css('text-decoration', 'none');
+		$('#y-2016').css('color', '#9fa0a0');
 
 		$('#pie-2012').highcharts({
 			chart: {
@@ -295,6 +304,125 @@ $(document).ready(function(){
 		});
 	});
 
+	$('#y-2016').click(function(){
+		$('#r-2008').addClass('hidden');
+		$('#r-2012').addClass('hidden');
+		$('#r-2016').removeClass('hidden');
+		$('#y-2016').css('text-decoration', 'underline');
+		$('#y-2016').css('color', 'black');
+		$('#y-2008').css('text-decoration', 'none');
+		$('#y-2008').css('color', '#9fa0a0');
+		$('#y-2012').css('text-decoration', 'none');
+		$('#y-2012').css('color', '#9fa0a0');
+
+		$('#pie-2016').highcharts({
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie',
+				style:{
+	        		fontFamily:'"微軟正黑體",Arial, Helvetica'
+	        	}
+			},
+			title:{
+				text: '2016 年 全國 各候選人得票率',
+				style:{
+					fontSize:'21px'
+				}
+			},
+			tooltip: {
+            	valueSuffix: ' %'
+        	},
+			plotOptions:{
+				pie:{
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels:{
+						enabled:false
+					},
+					showInLegend: true
+				}
+			},
+	        credits: {
+	            enabled: false
+	        },
+			series:[{
+				name: '得票率',
+				colorByPoint: true,
+				data: [{
+					name:'朱立倫/王如玄',
+					y: 31.04,
+					color: '#358bc6'
+				}, {
+					name: '蔡英文/陳建仁',
+					y: 56.12,
+					color: '#4dbb94'
+				}, {
+					name: '宋楚瑜/徐欣瑩',
+					y: 12.84,
+					color: '#f7dd61'
+				}]
+			}]
+
+
+		});
+
+
+		$('#pie-dist-2016').highcharts({
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie',
+				style:{
+	        		fontFamily:'"微軟正黑體",Arial, Helvetica'
+	        	}
+			},
+			title:{
+				text: '2016 年 ' + temp + ' 各候選人得票率',
+				style:{
+					fontSize:'21px'
+				}
+			},
+			tooltip: {
+            	valueSuffix: ' %'
+        	},
+			plotOptions:{
+				pie:{
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels:{
+						enabled:false
+					},
+					showInLegend: true
+				}
+			},
+	        credits: {
+	            enabled: false
+	        },
+			series:[{
+				name: '得票率',
+				colorByPoint: true,
+				data: [{
+					name:'朱立倫/王如玄',
+					y: vote_6,
+					color: '#358bc6'
+				}, {
+					name: '蔡英文/陳建仁',
+					y: vote_7,
+					color: '#4dbb94'
+				}, {
+					name: '宋楚瑜/徐欣瑩',
+					y: vote_8,
+					color: '#f7dd61'
+				}]
+			}]
+
+
+		});
+	});
+
 	d3.csv('data/dist_list.txt', function(data_dist){
 		
 		mark = '';
@@ -365,148 +493,11 @@ $(document).ready(function(){
 				if(rank_list[i]['town'] == temp){
 					$('#result-2012 .result-rank').text(rank_list[i]['rank']);
 					rank_2012 = rank_list[i]['rank'];
-					
-
-					if(parseInt(rank_list[i]['ticket_1']) > parseInt(rank_list[i]['ticket_2'])){
-						$('#tako').css('filter', 'grayscale(0%)');
-						$('#tako').css('-webkit-filter', 'grayscale(0%)');
-						$('#tako').attr('src', 'image/green_mobile.png');
-					}
-					else{
-						$('#tako').css('filter', 'grayscale(0%)');
-						$('#tako').css('-webkit-filter', 'grayscale(0%)');
-						$('#tako').attr('src', 'image/blue_mobile.png');
-					}
-					if(parseInt(rank_list[i]['rank']) <= 36){
-						$('#result-img').attr('src','image/111.jpg');
-						rank_temp = 0;
-					}
-					else if(parseInt(rank_list[i]['rank']) >= 224){
-						$('#result-img').attr('src','image/222.jpg');
-						rank_temp = 1;
-					}
-					else{
-						$('#result-img').attr('src','image/333.jpg');
-						rank_temp = 2;
-					}
-
-					$('#year-select').removeClass('hidden');
-					$('#y-2012').css('text-decoration', 'underline');
-					$('#y-2012').css('color', 'black');
-					$('#share').removeClass('hidden');
-					$('#result-img').removeClass('hidden');
 
 					vote_1 = parseFloat(rank_list[i]['vote_1'].slice(0,-2));
 					vote_2 = parseFloat(rank_list[i]['vote_2'].slice(0,-2));
 					vote_3 = parseFloat(rank_list[i]['vote_3'].slice(0,-2));
 
-					
-					$('#pie-2012').highcharts({
-						chart: {
-							plotBackgroundColor: null,
-							plotBorderWidth: null,
-							plotShadow: false,
-							type: 'pie',
-							style:{
-				        		fontFamily:'"微軟正黑體",Arial, Helvetica'
-				        	}
-						},
-						title:{
-							text: '2012 年 全國 各候選人得票率',
-							style:{
-								fontSize:'21px'
-							}
-						},
-						tooltip: {
-			            	valueSuffix: ' %'
-			        	},
-						plotOptions:{
-							pie:{
-								allowPointSelect: true,
-								cursor: 'pointer',
-								dataLabels:{
-									enabled:false
-								},
-								showInLegend: true
-							}
-						},
-				        credits: {
-				            enabled: false
-				        },
-						series:[{
-							name: '得票率',
-							colorByPoint: true,
-							data: [{
-								name:'蔡英文/蘇嘉全',
-								y: 45.63,
-								color: '#4dbb94'
-							}, {
-								name: '馬英九/吳敦義',
-								y: 51.60,
-								color: '#358bc6'
-							}, {
-								name: '宋楚瑜/林瑞雄',
-								y: 2.76,
-								color: '#f7dd61'
-							}]
-						}]
-
-
-					});
-
-
-					$('#pie-dist-2012').highcharts({
-						chart: {
-							plotBackgroundColor: null,
-							plotBorderWidth: null,
-							plotShadow: false,
-							type: 'pie',
-							style:{
-				        		fontFamily:'"微軟正黑體",Arial, Helvetica'
-				        	}
-						},
-						title:{
-							text: '2012 年 ' + temp + ' 各候選人得票率',
-							style:{
-								fontSize:'21px'
-							}
-						},
-						tooltip: {
-			            	valueSuffix: ' %'
-			        	},
-						plotOptions:{
-							pie:{
-								allowPointSelect: true,
-								cursor: 'pointer',
-								dataLabels:{
-									enabled:false
-								},
-								showInLegend: true
-							}
-						},
-				        credits: {
-				            enabled: false
-				        },
-						series:[{
-							name: '得票率',
-							colorByPoint: true,
-							data: [{
-								name:'蔡英文/蘇嘉全',
-								y: vote_1,
-								color: '#4dbb94'
-							}, {
-								name: '馬英九/吳敦義',
-								y: vote_2,
-								color: '#358bc6'
-							}, {
-								name: '宋楚瑜/林瑞雄',
-								y: vote_3,
-								color: '#f7dd61'
-							}]
-						}]
-
-
-					});
 
 				}
 			}
@@ -529,7 +520,162 @@ $(document).ready(function(){
 
 		});
 
+		d3.csv('data/dist_rank_2016.csv', function(rank_list){
+
+			for(i in rank_list){
+				if(rank_list[i]['town'] == temp){
+					$('#result-2016 .result-rank').text(rank_list[i]['rank']);
+					
+					rank_2008 = rank_list[i]['rank'];
+
+					vote_6 = parseFloat(rank_list[i]['vote_1'].slice(0,-2));
+					vote_7 = parseFloat(rank_list[i]['vote_2'].slice(0,-2));
+					vote_8 = parseFloat(rank_list[i]['vote_3'].slice(0,-2));
+
+					if(parseInt(rank_list[i]['ticket_1']) > parseInt(rank_list[i]['ticket_2'])){
+						$('#tako').css('filter', 'grayscale(0%)');
+						$('#tako').css('-webkit-filter', 'grayscale(0%)');
+						$('#tako').attr('src', 'image/green_mobile.png');
+					}
+					else{
+						$('#tako').css('filter', 'grayscale(0%)');
+						$('#tako').css('-webkit-filter', 'grayscale(0%)');
+						$('#tako').attr('src', 'image/blue_mobile.png');
+					}
+					if(parseInt(rank_list[i]['rank']) <= 36){
+						$('#result-img').attr('src','image/fb01.jpg');
+						rank_temp = 0;
+					}
+					else if(parseInt(rank_list[i]['rank']) >= 224){
+						$('#result-img').attr('src','image/fb02.jpg');
+						rank_temp = 1;
+					}
+					else{
+						$('#result-img').attr('src','image/fb03.jpg');
+						rank_temp = 2;
+					}
+
+					$('#year-select').removeClass('hidden');
+					$('#y-2016').css('text-decoration', 'underline');
+					$('#y-2016').css('color', 'black');
+					$('#share').removeClass('hidden');
+					$('#result-img').removeClass('hidden');
+
+					$('#pie-2016').highcharts({
+						chart: {
+							plotBackgroundColor: null,
+							plotBorderWidth: null,
+							plotShadow: false,
+							type: 'pie',
+							style:{
+				        		fontFamily:'"微軟正黑體",Arial, Helvetica'
+				        	}
+						},
+						title:{
+							text: '2016 年 全國 各候選人得票率',
+							style:{
+								fontSize:'21px'
+							}
+						},
+						tooltip: {
+			            	valueSuffix: ' %'
+			        	},
+						plotOptions:{
+							pie:{
+								allowPointSelect: true,
+								cursor: 'pointer',
+								dataLabels:{
+									enabled:false
+								},
+								showInLegend: true
+							}
+						},
+				        credits: {
+				            enabled: false
+				        },
+						series:[{
+							name: '得票率',
+							colorByPoint: true,
+							data: [{
+								name:'朱立倫/王如玄',
+								y: 31.04,
+								color: '#358bc6'
+							}, {
+								name: '蔡英文/陳建仁',
+								y: 56.12,
+								color: '#4dbb94'
+							}, {
+								name: '宋楚瑜/徐欣瑩',
+								y: 12.84,
+								color: '#f7dd61'
+							}]
+						}]
+
+
+					});
+
+
+					$('#pie-dist-2016').highcharts({
+						chart: {
+							plotBackgroundColor: null,
+							plotBorderWidth: null,
+							plotShadow: false,
+							type: 'pie',
+							style:{
+				        		fontFamily:'"微軟正黑體",Arial, Helvetica'
+				        	}
+						},
+						title:{
+							text: '2016 年 ' + temp + ' 各候選人得票率',
+							style:{
+								fontSize:'21px'
+							}
+						},
+						tooltip: {
+			            	valueSuffix: ' %'
+			        	},
+						plotOptions:{
+							pie:{
+								allowPointSelect: true,
+								cursor: 'pointer',
+								dataLabels:{
+									enabled:false
+								},
+								showInLegend: true
+							}
+						},
+				        credits: {
+				            enabled: false
+				        },
+						series:[{
+							name: '得票率',
+							colorByPoint: true,
+							data: [{
+								name:'朱立倫/王如玄',
+								y: vote_6,
+								color: '#358bc6'
+							}, {
+								name: '蔡英文/陳建仁',
+								y: vote_7,
+								color: '#4dbb94'
+							}, {
+								name: '宋楚瑜/徐欣瑩',
+								y: vote_8,
+								color: '#f7dd61'
+							}]
+						}]
+
+
+					});
+
+					
+				}
+			}
+
+		});
+
 		$('#r-2008').addClass('hidden');
+		$('#r-2012').addClass('hidden');
 
 
 	});
