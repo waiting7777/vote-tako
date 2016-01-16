@@ -16,7 +16,13 @@ if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 }
 
+function tako_scroll () {
+		$('html, body').animate({scrollTop: $("#tako").offset().top}, 500);
+}
+
 $(document).ready(function(){
+
+	
 
 	$('#share').hover(
 		function(){
@@ -280,7 +286,7 @@ $(document).ready(function(){
 			
 			if(mark != data_dist[i]['town']){
 
-				temp = '<li><a href="javascript:;">';
+				temp = '<li><a href="javascript:tako_scroll();">';
 				temp += data_dist[i]['town'];
 				temp += '</a></li>';
 				mark = data_dist[i]['town'];
@@ -310,7 +316,7 @@ $(document).ready(function(){
 							count += 1;
 						}
 
-						temp = '<li><a href="javascript:;">';
+						temp = '<li><a href="javascript:tako_scroll();">';
 						temp += data_dist[i]['dist'];
 						temp += '</a></li>';
 						$('#list-dist').append(temp);
@@ -333,6 +339,7 @@ $(document).ready(function(){
 
 		temp = $('#btn-town').text() + $('#btn-dist').text();
 		dist_temp = temp;
+		$('html, body').animate({scrollTop: $("#test-result").offset().top - 30}, 1000);
 
 		d3.csv('data/dist_rank_2012.csv', function(rank_list){
 

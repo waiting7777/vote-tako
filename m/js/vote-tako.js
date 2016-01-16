@@ -10,6 +10,10 @@ var rank_2012 = 0;
 
 fb_share = ['image/fb01.jpg', 'image/fb02.jpg', 'image/fb03.jpg'];
 
+function tako_scroll () {
+		$('html, body').animate({scrollTop: $("#tako").offset().top}, 500);
+}
+
 
 $(document).ready(function(){
 
@@ -275,7 +279,7 @@ $(document).ready(function(){
 			
 			if(mark != data_dist[i]['town']){
 
-				temp = '<li><a href="#tako">';
+				temp = '<li><a href="javascript:tako_scroll();">';
 				temp += data_dist[i]['town'];
 				temp += '</a></li>';
 				mark = data_dist[i]['town'];
@@ -305,7 +309,7 @@ $(document).ready(function(){
 							count += 1;
 						}
 
-						temp = '<li><a href="#tako">';
+						temp = '<li><a href="javascript:tako_scroll();">';
 						temp += data_dist[i]['dist'];
 						temp += '</a></li>';
 						$('#list-dist').append(temp);
@@ -328,6 +332,7 @@ $(document).ready(function(){
 
 		temp = $('#btn-town').text() + $('#btn-dist').text();
 		dist_temp = temp;
+		$('html, body').animate({scrollTop: $("#test-result").offset().top - 40}, 1000);
 
 		d3.csv('data/dist_rank_2012.csv', function(rank_list){
 
