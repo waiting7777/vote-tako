@@ -5,6 +5,14 @@ body{
 	color: #1A1A1A;
 }
 
+#header p{
+	color: red;
+	font-size: 4vw;
+	line-height: 4vw;
+	margin-top: 20px;
+}
+
+
 @media screen and (max-width: 1200px){ 
 
 	body{
@@ -22,8 +30,10 @@ body{
 }
 h1{
 	font-weight: bold;
-	font-size: 50px;
-	line-height: 75px;
+	font-size: 9vw;
+	line-height: 8vw;
+	margin-bottom: 20px;
+
 }
 
 h2{
@@ -37,7 +47,7 @@ h2{
 #pre_text{
 	border-left-style: solid;
 	border-left-color: #9fa0a0;
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
 #pre_text p{
@@ -92,6 +102,8 @@ h2{
 	font-size: 18px;
 	line-height: 18px;
 	width: 250px;
+	height: 250px;
+	overflow-y: scroll;
 }
 
 #list-dist{
@@ -99,6 +111,8 @@ h2{
 	font-size: 18px;
 	line-height: 18px;
 	width: 250px;
+	height: 250px;
+	overflow-y: scroll;
 }
 
 #test-result{

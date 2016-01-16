@@ -5,6 +5,13 @@ body{
 	color: #1A1A1A;
 }
 
+#header p{
+	color: red;
+	font-size: 6vw;
+	line-height: 6vw;
+	margin-top: 20px;
+}
+
 .circle {
 	vertical-align:top;
     display:inline-block;
@@ -32,8 +39,10 @@ body{
 }
 h1{
 	font-weight: bold;
-	font-size: 50px;
-	line-height: 75px;
+	font-size: 13vw;
+	line-height: 10vw;
+	margin-bottom: 20px;
+
 }
 
 h2{
@@ -47,12 +56,6 @@ h2{
 #header-line{
 	color: red;
 	font-size: 21px;
-}
-
-#udnlogo{
-	float:right;
-	margin-top: 40px;
-	margin-bottom: 20px;
 }
 
 #pre_text{
@@ -79,7 +82,7 @@ h2{
 
 #tako{
 	width: 100%;
-	height: 320px;
+	height: auto;
 	position: absolute;
 	top: 0px;
 	filter: grayscale(100%);
@@ -100,17 +103,21 @@ h2{
 }
 
 #list-town{
-	margin-left: 60px;
+	margin-left: 15px;
 	font-size: 18px;
 	line-height: 18px;
 	width: 250px;
+	height: 250px;
+	overflow-y: scroll; 
 }
 
 #list-dist{
-	margin-left: 40px;
+	margin-left: 15px;
 	font-size: 18px;
 	line-height: 18px;
 	width: 250px;
+	height: 250px;
+	overflow-y: scroll;
 }
 
 #test-result{
@@ -120,7 +127,6 @@ h2{
 }
 
 #predict-test-content{
-	margin-top: 199px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #9fa0a0;
@@ -156,7 +162,7 @@ h2{
 
 	#tako{
 		width: 100%;
-		height: 250px;
+		height: auto;
 		position: absolute;
 		top: 0px;
 		filter: grayscale(100%);
@@ -199,7 +205,7 @@ h2{
 
 	#tako{
 		width: 100%;
-		height: 250px;
+		height: auto;
 		position: absolute;
 		top: 0px;
 		filter: grayscale(100%);
@@ -241,7 +247,6 @@ h2{
 
 	#predict-test-content{
 		padding-left: 20px;
-		margin-top: 251px;
 		border-style: solid;
 		border-width: 1px;
 		border-color: #9fa0a0;
@@ -284,7 +289,6 @@ h2{
 
 	#predict-test-content{
 		padding-left: 20px;
-		margin-top: 251px;
 		border-style: solid;
 		border-width: 1px;
 		border-color: #9fa0a0;

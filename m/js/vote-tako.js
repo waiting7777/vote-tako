@@ -8,6 +8,9 @@ var dist_temp = '';
 var rank_2008 = 0;
 var rank_2012 = 0;
 
+var tako_width = 700;
+var tako_height = 320;
+
 fb_share = ['image/fb01.jpg', 'image/fb02.jpg', 'image/fb03.jpg'];
 
 function tako_scroll () {
@@ -16,6 +19,28 @@ function tako_scroll () {
 
 
 $(document).ready(function(){
+
+	tako_width_auto = parseInt($("#tako").css("width"));
+	tako_height_auto = Math.round(tako_height * tako_width_auto / tako_width, 0);
+	console.log(tako_width_auto);
+	console.log(tako_height_auto);
+
+	if(tako_height_auto <= 150){
+		margin_factor = 0.82;
+	}
+	else if(tako_height_auto > 150 && tako_height_auto <= 200){
+		margin_factor = 0.81;
+	}
+	else if(tako_height_auto > 200 && tako_height_auto <= 250){
+		margin_factor = 0.8;
+	}
+	else{
+		margin_factor = 0.79;
+	}
+
+	console.log(margin_factor);
+
+	$('#predict-test-content').css('margin-top', tako_height_auto * margin_factor);
 
 	$('#share').hover(
 		function(){
