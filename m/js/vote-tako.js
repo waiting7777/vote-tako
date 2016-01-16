@@ -329,7 +329,7 @@ $(document).ready(function(){
 		temp = $('#btn-town').text() + $('#btn-dist').text();
 		dist_temp = temp;
 
-		d3.csv('data/dist_rank_2012.txt', function(rank_list){
+		d3.csv('data/dist_rank_2012.csv', function(rank_list){
 
 			for(i in rank_list){
 				if(rank_list[i]['town'] == temp){
@@ -483,7 +483,7 @@ $(document).ready(function(){
 
 		});
 
-		d3.csv('data/dist_rank_2008.txt', function(rank_list){
+		d3.csv('data/dist_rank_2008.csv', function(rank_list){
 
 			for(i in rank_list){
 				if(rank_list[i]['town'] == temp){
