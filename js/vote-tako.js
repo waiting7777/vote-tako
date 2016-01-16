@@ -25,7 +25,30 @@ function tako_scroll () {
 
 $(document).ready(function(){
 
-	
+	$('#rank-2016').css('text-decoration', 'underline');
+	$('#rank-2016').css('color', 'black');
+
+	$('.rank').click(function(){
+		$('.rank').css('text-decoration', 'none');
+		$('.rank').css('color', '#9fa0a0');
+		switch($(this).attr('value')){
+			case '2008':
+				$('#rank-2008').css('text-decoration', 'underline');
+				$('#rank-2008').css('color', 'black');
+				$('#rank-img').attr('src', 'image/2008web.jpg');
+				break;
+			case '2012':
+				$('#rank-2012').css('text-decoration', 'underline');
+				$('#rank-2012').css('color', 'black');
+				$('#rank-img').attr('src', 'image/2012web.jpg');
+				break;
+			case '2016':
+				$('#rank-2016').css('text-decoration', 'underline');
+				$('#rank-2016').css('color', 'black');
+				$('#rank-img').attr('src', 'image/2016web.jpg');
+				break;
+		}
+	});
 
 	$('#share').hover(
 		function(){
@@ -102,6 +125,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'謝長廷/蘇貞昌',
 					y: vote_4,
@@ -151,6 +182,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'謝長廷/蘇貞昌',
 					y: 41.55,
@@ -213,6 +252,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'蔡英文/蘇嘉全',
 					y: 45.63,
@@ -267,6 +314,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'蔡英文/蘇嘉全',
 					y: vote_1,
@@ -332,6 +387,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'朱立倫/王如玄',
 					y: 31.04,
@@ -386,6 +449,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'朱立倫/王如玄',
 					y: vote_6,
@@ -578,6 +649,14 @@ $(document).ready(function(){
 				        },
 						series:[{
 							name: '得票率',
+							dataLabels: {
+								verticalAlign: 'top',
+                				enabled: true,
+                				distance: -30,
+                				formatter: function () {
+                    				return Math.round(this.percentage) + ' %';
+                				}
+							},
 							colorByPoint: true,
 							data: [{
 								name:'朱立倫/王如玄',
@@ -632,6 +711,14 @@ $(document).ready(function(){
 				        },
 						series:[{
 							name: '得票率',
+							dataLabels: {
+								verticalAlign: 'top',
+                				enabled: true,
+                				distance: -30,
+                				formatter: function () {
+                    				return Math.round(this.percentage) + ' %';
+                				}
+							},
 							colorByPoint: true,
 							data: [{
 								name:'朱立倫/王如玄',

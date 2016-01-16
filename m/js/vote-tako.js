@@ -41,7 +41,30 @@ $(document).ready(function(){
 		margin_factor = 0.79;
 	}
 
-	console.log(margin_factor);
+	$('#rank-2016').css('text-decoration', 'underline');
+	$('#rank-2016').css('color', 'black');
+
+	$('.rank').click(function(){
+		$('.rank').css('text-decoration', 'none');
+		$('.rank').css('color', '#9fa0a0');
+		switch($(this).attr('value')){
+			case '2008':
+				$('#rank-2008').css('text-decoration', 'underline');
+				$('#rank-2008').css('color', 'black');
+				$('#rank-img').attr('src', 'image/2008mobile.jpg');
+				break;
+			case '2012':
+				$('#rank-2012').css('text-decoration', 'underline');
+				$('#rank-2012').css('color', 'black');
+				$('#rank-img').attr('src', 'image/2012mobile.jpg');
+				break;
+			case '2016':
+				$('#rank-2016').css('text-decoration', 'underline');
+				$('#rank-2016').css('color', 'black');
+				$('#rank-img').attr('src', 'image/2016mobile.jpg');
+				break;
+		}
+	});
 
 	$('#predict-test-content').css('margin-top', tako_height_auto * margin_factor);
 
@@ -75,6 +98,7 @@ $(document).ready(function(){
 	$('#btn-result').attr('disabled', true);
 
 	$('#y-2008').click(function(){
+		$('html, body').animate({scrollTop: $("#year-select").offset().top - 30}, 1000);
 		$('#r-2008').removeClass('hidden');
 		$('#r-2012').addClass('hidden');
 		$('#r-2016').addClass('hidden');
@@ -120,6 +144,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'謝長廷/蘇貞昌',
 					y: vote_4,
@@ -169,6 +201,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'謝長廷/蘇貞昌',
 					y: 41.55,
@@ -231,6 +271,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'蔡英文/蘇嘉全',
 					y: 45.63,
@@ -285,6 +333,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'蔡英文/蘇嘉全',
 					y: vote_1,
@@ -350,6 +406,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'朱立倫/王如玄',
 					y: 31.04,
@@ -404,6 +468,14 @@ $(document).ready(function(){
 			series:[{
 				name: '得票率',
 				colorByPoint: true,
+				dataLabels: {
+					verticalAlign: 'top',
+    				enabled: true,
+    				distance: -30,
+    				formatter: function () {
+        				return Math.round(this.percentage) + ' %';
+    				}
+				},
 				data: [{
 					name:'朱立倫/王如玄',
 					y: vote_6,
@@ -596,6 +668,14 @@ $(document).ready(function(){
 						series:[{
 							name: '得票率',
 							colorByPoint: true,
+							dataLabels: {
+								verticalAlign: 'top',
+			    				enabled: true,
+			    				distance: -30,
+			    				formatter: function () {
+			        				return Math.round(this.percentage) + ' %';
+			    				}
+							},
 							data: [{
 								name:'朱立倫/王如玄',
 								y: 31.04,
@@ -650,6 +730,14 @@ $(document).ready(function(){
 						series:[{
 							name: '得票率',
 							colorByPoint: true,
+							dataLabels: {
+								verticalAlign: 'top',
+			    				enabled: true,
+			    				distance: -30,
+			    				formatter: function () {
+			        				return Math.round(this.percentage) + ' %';
+			    				}
+							},
 							data: [{
 								name:'朱立倫/王如玄',
 								y: vote_6,
